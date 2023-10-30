@@ -5,15 +5,16 @@ function getComputerChoice() {
   const randomNumber = (Math.random() * 100)
 
   if (randomNumber <= 33) {
-    return "rock;"
+    return "rock";
   } else if (randomNumber <=66) {
     return "paper";
   } else {
     return "scissors";
   }
-    
+  
 }
-
+const computerChoice = getComputerChoice()
+console.log(computerChoice)
 //the choices are between rock, paper, and scissors
 
 //rock beats scissors
