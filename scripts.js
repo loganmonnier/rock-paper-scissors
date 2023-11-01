@@ -13,7 +13,8 @@ function getComputerChoice() {
 }
 
 
-function playRound(playerSelection, computerChoice) { 
+function playRound() { 
+
   const computerChoice = getComputerChoice()
   const playerSelection = prompt("What is your selection?").toLowerCase()
   
@@ -43,7 +44,7 @@ function game(playerSelection, computerChoice) {
     console.log(playRound(playerSelection,computerChoice));
 }
 
-console.log(game(playerSelection, computerChoice));
+console.log(game());
 
 
 
