@@ -12,11 +12,11 @@ function getComputerChoice() {
   
 }
 
-const computerChoice = getComputerChoice()
-
-const playerSelection = prompt("What is your selection?").toLowerCase()
 
 function playRound(playerSelection, computerChoice) { 
+  const computerChoice = getComputerChoice()
+  const playerSelection = prompt("What is your selection?").toLowerCase()
+  
   if (playerSelection === computerChoice) {
     return "It is a tie!";
   } else if (playerSelection === "rock" && computerChoice === "scissors") {
@@ -35,13 +35,15 @@ function playRound(playerSelection, computerChoice) {
   
 }
 
-console.log(playRound(playerSelection, computerChoice))
+function game(playerSelection, computerChoice) {
+    console.log(playRound(playerSelection,computerChoice));
+    console.log(playRound(playerSelection,computerChoice));
+    console.log(playRound(playerSelection,computerChoice));
+    console.log(playRound(playerSelection,computerChoice));
+    console.log(playRound(playerSelection,computerChoice));
+}
+
+console.log(game(playerSelection, computerChoice));
 
 
-//if the two values are equal, print "It's a tie!"
-//if the player's value is rock and the computers is scissors, print "You won! Rock beats scissors."
-//if the player's value is rock and the computers is paper, print "You lose! Paper beats rock."
-//if the player's value is scissors and the computer's is paper, print "You won! Scissors beats paper."
-//if the player's value is scissors and the computer's is rock, print "You lose! Rock beats scissors."
-//if the player's value is paper and the computer's is rock, print "You win! Paper beats rock."
-//if the player's value is paper and the computer's is scissors, print "You lose! Scissors beats paper. "
+
