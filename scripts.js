@@ -3,6 +3,9 @@ const rockButton = document.createElement('button');
 const paperButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
 const displayResults = document.createElement('p');
+rockButton.textContent = 'ROCK';
+paperButton.textContent = 'PAPER';
+scissorsButton.textContent = 'SCISSORS';
 
 const div = document.querySelector('div')
 
@@ -78,4 +81,11 @@ scissorsButton.addEventListener('click', () => {
     displayResults.textContent = 'Wins:' + wins;
     displayResults.textContent += '\nLosses: ' + losses;
 })
+
+if (wins == 5){
+  alert('YOU WINNNNN!')
+} else if (losses == 5){
+  alert('YOU LOSEEEEE! FUCKING LOSER')
+}
+
 
