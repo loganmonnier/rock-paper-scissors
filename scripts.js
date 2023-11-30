@@ -2,11 +2,14 @@
 const rockButton = document.createElement('button');
 const paperButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
+const displayResults = document.createElement('p');
 
-body.appendChild(rockButton);
-body.appendChild(paperButton);
-body.appendChild(scissorsButton);
+const div = document.querySelector(div)
 
+div.appendChild(rockButton);
+div.appendChild(paperButton);
+div.appendChild(scissorsButton);
+div.appendChild(displayResults);
 
 
 function getComputerChoice() {
@@ -22,11 +25,9 @@ function getComputerChoice() {
   
 }
 
-
 function playRound() { 
 
   const computerChoice = getComputerChoice()
-  const playerSelection = prompt("What is your selection?").toLowerCase()
   
   if (playerSelection === computerChoice) {
     return "It is a tie!";
@@ -45,6 +46,30 @@ function playRound() {
   }
   
 }
+
+let playerSelection = '';
+
+rockButton.addEventListener('click', () => {
+  playerSelection = 'rock';
+  const computerChoice = getComputerChoice();
+
+  playRound(computerChoice, playerSelection);
+})
+
+paperButton.addEventListener('click', () => {
+  playerSelection = 'paper';
+  const computerChoice = getComputerChoice();
+  
+  playRound(computerChoice, playerSelection);
+})
+
+scissorsButton.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    const computerChoice = getComputerChoice();
+  
+    playRound(computerChoice, playerSelection);
+})
+
 
 
 console.log(game())
