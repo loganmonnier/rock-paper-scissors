@@ -4,13 +4,17 @@ const paperButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
 const displayResults = document.createElement('p');
 
-const div = document.querySelector(div)
+const div = document.querySelector('div')
+
+let playerSelection = '';
+let wins = 0
+let losses = 0
 
 div.appendChild(rockButton);
 div.appendChild(paperButton);
 div.appendChild(scissorsButton);
 div.appendChild(displayResults);
-
+displayResults.textContent = 'Wins:' + wins + '  ' + 'Losses:' + losses;
 
 function getComputerChoice() {
   const randomNumber = (Math.random() * 100)
@@ -30,30 +34,31 @@ function playRound() {
   const computerChoice = getComputerChoice()
   
   if (playerSelection === computerChoice) {
-    return "It is a tie!";
+    console.log('It\'s a tie');
   } else if (playerSelection === "rock" && computerChoice === "scissors") {
-    return "You win! Rock beats scissors.";
+    wins++;
   } else if (playerSelection === "rock" && computerChoice === "paper") {
-    return "You lose! Paper beats rock.";
+    losses++;
   } else if (playerSelection === "scissors" && computerChoice === "paper") {
-    return "You win! Scissors beats paper.";
+    wins++;
   } else if (playerSelection === "scissors" && computerChoice === "rock") {
-    return "You lose! Rock beats scissors.";
+    losses++;
   } else if (playerSelection === "paper" && computerChoice === "rock") {
-    return "You win! Paper beats rock.";
+    wins++;
   } else if (playerSelection === "paper" && computerChoice === "scissors") {
-    return "You lose! Scissors beats paper.";
+    losses++;
   }
   
 }
 
-let playerSelection = '';
 
 rockButton.addEventListener('click', () => {
   playerSelection = 'rock';
   const computerChoice = getComputerChoice();
 
   playRound(computerChoice, playerSelection);
+  displayResults.textContent = 'Wins:' + wins;
+  displayResults.textContent += '\nLosses: ' + losses;
 })
 
 paperButton.addEventListener('click', () => {
@@ -61,6 +66,8 @@ paperButton.addEventListener('click', () => {
   const computerChoice = getComputerChoice();
   
   playRound(computerChoice, playerSelection);
+  displayResults.textContent = 'Wins:' + wins;
+  displayResults.textContent += '\nLosses: ' + losses;
 })
 
 scissorsButton.addEventListener('click', () => {
@@ -68,10 +75,7 @@ scissorsButton.addEventListener('click', () => {
     const computerChoice = getComputerChoice();
   
     playRound(computerChoice, playerSelection);
+    displayResults.textContent = 'Wins:' + wins;
+    displayResults.textContent += '\nLosses: ' + losses;
 })
-
-
-
-console.log(game())
-
 
