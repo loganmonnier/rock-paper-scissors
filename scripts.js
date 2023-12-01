@@ -62,6 +62,12 @@ rockButton.addEventListener('click', () => {
   playRound(computerChoice, playerSelection);
   displayResults.textContent = 'Wins:' + wins;
   displayResults.textContent += '\nLosses: ' + losses;
+
+  if (wins == 5){
+    alert('YOU WINNNNN!')
+  } else if (losses == 5){
+    alert('YOU LOSEEEEE! FUCKING LOSER')
+  };
 })
 
 paperButton.addEventListener('click', () => {
@@ -71,6 +77,12 @@ paperButton.addEventListener('click', () => {
   playRound(computerChoice, playerSelection);
   displayResults.textContent = 'Wins:' + wins;
   displayResults.textContent += '\nLosses: ' + losses;
+
+  if (wins == 5){
+    alert('YOU WINNNNN!')
+  } else if (losses == 5){
+    alert('YOU LOSEEEEE! FUCKING LOSER')
+  };
 })
 
 scissorsButton.addEventListener('click', () => {
@@ -80,12 +92,13 @@ scissorsButton.addEventListener('click', () => {
     playRound(computerChoice, playerSelection);
     displayResults.textContent = 'Wins:' + wins;
     displayResults.textContent += '\nLosses: ' + losses;
+
+    if (wins == 5){
+      alert('YOU WINNNNN!')
+    } else if (losses == 5){
+      alert('YOU LOSEEEEE! FUCKING LOSER')
+    };
 })
 
-if (wins == 5){
-  alert('YOU WINNNNN!')
-} else if (losses == 5){
-  alert('YOU LOSEEEEE! FUCKING LOSER')
-}
 
 
